@@ -14,14 +14,13 @@ from threading import Thread
 
 from shoal_server import config
 from shoal_server import utilities
-from shoal_server import squid_auditor
 
 """
     Basic class to store and update information about each squid server.
 """
 class SquidNode(object):
 
-    def __init__(self, key, hostname, squid_port, public_ip, private_ip, external_ip, load, geo_data, verified, global_access, domain_access, max_load=122000, last_active=time()):
+    def __init__(self, key, hostname, squid_port, public_ip, private_ip, external_ip, load, geo_data, verified, global_access, domain_access, max_load=config.squid_max_load, last_active=time()):
         """
         constructor for SquidNode, time created is current time
         """
